@@ -41,12 +41,11 @@ jobs:
           name: Creating artifacts
           path: |
             output
-            
-            - name: Deploy
-      
+                  
       - name: Publishing result to the page
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./output
           cname: SBS coding chalenge
+          exclude_assets: '*.json,*.png,*.zip,*.webm'
