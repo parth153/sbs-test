@@ -1,0 +1,36 @@
+{
+  "name": "sbs-test",
+  "version": "1.0.0",
+  "description": "coding challenge for sbs test engineer position",
+  "main": "index.js",
+  "scripts": {
+    "test-local": "npx codeceptjs run --features -c ./configs/codecept.conf.js --verbose",
+    "test-local-frontend": "npx codeceptjs run -c ./configs/codecept.conf.js --verbose --grep \"@frontend\"",
+    "test-local-backend": "npx codeceptjs run -c ./configs/codecept.conf.js --verbose --grep \"@backend\"",
+    "test-github": "npx codeceptjs run --features -c ./configs/codecept.github.conf.js",
+    "generate-report": "node ./report_generator/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parth153/sbs-test.git"
+  },
+  "keywords": [],
+  "author": "parthparikh",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/parth153/sbs-test/issues"
+  },
+  "homepage": "https://github.com/parth153/sbs-test#readme",
+  "devDependencies": {
+    "@types/jsmediatags": "^3.9.3",
+    "codeceptjs": "^3.1.2",
+    "codeceptjs-chai": "^2.3.2",
+    "codeceptjs-cucumber-json-reporter": "^1.0.7",
+    "cucumber-html-reporter": "^5.5.0",
+    "jsmediatags": "^3.9.7",
+    "playwright": "^1.15.1",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {}
+}

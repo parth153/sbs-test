@@ -1,0 +1,105 @@
+{
+	"definitions": {},
+	"$schema": "http://json-schema.org/draft-07/schema#", 
+	"$id": "https://example.com/object1633159354.json", 
+	"title": "Root", 
+	"type": "array",
+	"default": [],
+	"items":{
+		"$id": "#root/items", 
+		"title": "Items", 
+		"type": "object",
+		"required": [
+			"label",
+			"program",
+			"channelName",
+			"startTime",
+			"endTime",
+			"onDigitalRadio",
+			"analogueFrequency",
+			"archiveAudio"
+		],
+		"properties": {
+			"label": {
+				"$id": "#root/items/label", 
+				"title": "Label", 
+				"type": "string",
+				"default": "",
+				"pattern": "^.*$"
+			},
+			"program": {
+				"$id": "#root/items/program", 
+				"title": "Program", 
+				"type": "string",
+				"default": "",
+				"pattern": "^.*$"
+			},
+			"channelName": {
+				"$id": "#root/items/channelName", 
+				"title": "Channelname", 
+				"type": "string",
+				"default": "",
+				"pattern": "^.*$"
+			},
+			"startTime": {
+				"$id": "#root/items/startTime", 
+				"title": "Starttime", 
+				"type": "integer",
+				"default": 0
+			},
+			"endTime": {
+				"$id": "#root/items/endTime", 
+				"title": "Endtime", 
+				"type": "integer",
+				"default": 0
+			},
+			"onDigitalRadio": {
+				"$id": "#root/items/onDigitalRadio", 
+				"title": "Ondigitalradio", 
+				"type": "boolean",
+				"default": true
+			},
+			"analogueFrequency": {
+				"$id": "#root/items/analogueFrequency", 
+				"title": "Analoguefrequency", 
+				"type": "boolean",
+				"default": false
+			},
+			"archiveAudio": {
+				"$id": "#root/items/archiveAudio", 
+				"title": "Archiveaudio", 
+				"type": "object",
+				"required": [
+					"mp3",
+					"m4a",
+					"flv"
+				],
+				"properties": {
+					"mp3": {
+						"$id": "#root/items/archiveAudio/mp3", 
+						"title": "Mp3", 
+						"type": "string",
+						"default": "",
+						"pattern": "https://media.sbs.com.au/ondemand/audio/.*$"
+					},
+					"m4a": {
+						"$id": "#root/items/archiveAudio/m4a", 
+						"title": "M4a", 
+						"type": "string",
+						"default": "",
+						"pattern": "https://media.sbs.com.au/ondemand/audio/.*$"
+					},
+					"flv": {
+						"$id": "#root/items/archiveAudio/flv", 
+						"title": "Flv", 
+						"type": "string",
+						"default": "",
+						"pattern": "https://media.sbs.com.au/ondemand/audio/.*$"
+					}
+				}
+			}
+
+		}
+	}
+
+}
