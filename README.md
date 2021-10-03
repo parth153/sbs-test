@@ -1,37 +1,62 @@
-## Welcome to GitHub Pages
+## SBS Code Challenge
 
-You can use the [editor on GitHub](https://github.com/parth153/sbs-test/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+### Overview - Building Blocks of the Solution
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+This automation solution for Frontend and Backend is developed in Typescript/Javascript combo using CodeceptJS with Playwright helper. The tests are written in BDD format - gherkin style. The solution has only one branch - Master. The solution gets build with Github Actions workflow on every push in Master branch.
 
-### Markdown
+The solution has following dependencies:
+  1) [CodeceptJS](https://www.npmjs.com/package/codeceptjs) - preferred tool for Automation.
+  2) [Playwright](https://www.npmjs.com/package/playwright) - preferred helper - supports chromimum, firefox and webkit.
+  3) [CodeceptJS-Chai](https://www.npmjs.com/package/codeceptjs-chai) - assertions can be within CodeceptJS namespace.
+  4) [Ts-node](https://www.npmjs.com/package/ts-node) - for Typescript node support
+  5) [Typescript](https://www.npmjs.com/package/typescript) - Typescript support
+  6) [CodeceptJS-cucumber-json-reporter](https://www.npmjs.com/package/codeceptjs-cucumber-json-reporter) - to create test reports in JSON format
+  7) [cucumber-html-reporter](https://www.npmjs.com/package/cucumber-html-reporter) - to create HTML report from JSON reports
+  8) [Jsmediatags](https://www.npmjs.com/package/jsmediatags) - to read mp3 file tags
+  9) [Eslint](https://www.npmjs.com/package/eslint) - preferred linting tool
+And three typescript typings.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
+#### Code Structure
 ```markdown
-Syntax highlighted code block
+## Root Directory
+package.json - dev dependencies, version, description and npm scripts.
+package-lock.json - resolved dependencies for the solution.
+jsconfig.json and tsconfig.json - compiling options.
+.eslintignore - all the ignore files/folders for linting.
+.eslintrrc.json - linting configuration.
+README.md - read me file for the solution.
+steps_file.js - default file to create custom steps
+steps.d.ts - typescript file to declare CodecepJS nampespace and provide Playwright method extenstion.
+_config.yml - was trying out github pages - contains theme for the page
 
-# Header 1
-## Header 2
-### Header 3
+## .github\workflows
+main.yml - Github actions workflow file.
 
-- Bulleted
-- List
+## configs
+codecept.conf.js - codeceptjs configuration file for local run.
+codecept.github.conf.js - codeceptjs configuration file for github actions run.
 
-1. Numbered
-2. List
+## endpointschemas
+endpoint.json - json schema file for the api response.
 
-**Bold** and _Italic_ and `Code` text
+## features
+backend.feature - feature file for backend test scenario.
+frontend.feature - feature file for frontend test scenario.
 
-[Link](url) and ![Image](src)
+## step_definitions
+backend_steps.ts - step definitions for backend scenario gherkin steps.
+frontend_steps.ts - step definitions for frontend scenario gherkin steps.
+
+## pages
+sbsHindiLockdownPage.ts - page object - contains locators and verification methods for SBS Hindi Lockdown Page.
+
+## report_generator
+index.js - file to create HTML report from json report.
+
+## utils
+backEndTestHelper.ts - back end test helper - contains method for getting Tags from MP3 links
+contants.ts - constants for solution like test url, audio player progress bar width style update for 20 secs, MP3 tags. 
+frontEndTestHelper.ts - front end test helper - methods for adding/subtracting seconds for time elapsed calculations, and calculate style width progress for audio player progress bar
+
+
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/parth153/sbs-test/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
