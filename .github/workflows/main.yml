@@ -41,3 +41,11 @@ jobs:
           path: |
             output
         if: always()
+        
+      - name: Downloading Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: Artifacts
+          path: |
+            output
+        if: always()
