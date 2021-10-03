@@ -1,7 +1,7 @@
 {
   "name": "sbs-test",
   "version": "1.0.0",
-  "description": "Coding challenge for sbs test engineer position",
+  "description": "Coding challenge for SBS Technology - Test Automation Engineer position",
   "main": "index.js",
   "scripts": {
     "test-local": "npx codeceptjs run --features -c ./configs/codecept.conf.js --verbose",
