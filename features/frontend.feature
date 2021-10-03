@@ -14,4 +14,4 @@ Feature: Front end coding challenge
     Then the user clicks Pause on the Audio Player
     Then the user clicks 20 seconds "forward" on the audio player and verifies scrub on the progress bar
     Then the user clicks 20 seconds "rewind" on the audio player and verifies scrub on the progress bar
-    Then the user verifies clicking on language toggle displays language list
+    Then the user verifies mouse hovering on language toggle displays language list

@@ -123,8 +123,6 @@ export class SbsHindiLockDownPage {
       I.usePlaywrightTo("getting location of element", async ({page}) => {
           await page.locator(this.fields.languageListDropDownLink).hover();
       });
-      //click the element - required by the test
-      I.click(this.fields.languageListDropDownLink);
       //verify that the drop down body is visible
       I.seeElement(this.fields.languageListDropDownBody);
   }

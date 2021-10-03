@@ -71,6 +71,6 @@ Then("the user clicks {int} seconds {string} on the audio player and verifies sc
     await sbsHindiLockDownPage.verifyScrubOnProgressBar(seconds, forwardRewindOption);
 });
 
-Then("the user verifies clicking on language toggle displays language list", async () => {
+Then("the user verifies mouse hovering on language toggle displays language list", async () => {
     await sbsHindiLockDownPage.verifyLanguageListDropDown();
 });
