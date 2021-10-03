@@ -110,15 +110,22 @@ export class SbsHindiLockDownPage {
 
       // assert elapsed time and style width values
       I.assertEqual(FrontEndTestHelper.addSubSecondsFromTimeLapsedElementText(elapsedTimeBeforeClick, seconds, forwardRewindOption), 
-            elapsedTimeAfterClick, "The elapsed time on the progress bar is not correct");
+          elapsedTimeAfterClick, "The elapsed time on the progress bar is not correct");
       // style width component has a minor discrepancy so not asserting equality but just starts with
       I.assertStartsWith(FrontEndTestHelper.calculateWidthProgressFor20Secs(styleWidthBeforeClick.width, forwardRewindOption), 
-            styleWidthAfterClick.width.substring(0, 4), "The style width on progrss bar has not updated correctly");
+          styleWidthAfterClick.width.substring(0, 4), "The style width on progrss bar has not updated correctly");
   }
 
   async verifyLanguageListDropDown() {
+      //verify that the drop down body is not visible
       I.dontSeeElement(this.fields.languageListDropDownBody);
+      //hover to the elment
+      I.usePlaywrightTo("getting location of element", async ({page}) => {
+          await page.locator(this.fields.languageListDropDownLink).hover();
+      });
+      //click the element - required by the test
       I.click(this.fields.languageListDropDownLink);
+      //verify that the drop down body is visible
       I.seeElement(this.fields.languageListDropDownBody);
   }
 }
