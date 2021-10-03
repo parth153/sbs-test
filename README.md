@@ -1,4 +1,5 @@
 # SBS Code Challenge
+[![SBS Code Challenge](https://github.com/parth153/sbs-test/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/parth153/sbs-test/actions/workflows/main.yml)
 
 ## Overview - Building Blocks of the Solution
 
